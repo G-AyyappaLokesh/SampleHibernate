@@ -20,11 +20,16 @@ public class App
 {
     public static void main( String[] args ) throws SecurityException, RollbackException, HeuristicMixedException, HeuristicRollbackException, SystemException
     {
+    	
+    	Names n=new Names();
+    	n.setFirstname("Ayyappa");
+    	n.setLastname("Lokesh");
+    	n.setSurname("Surname");
       Data d=new Data();
       d.setId(1);
-      d.setName("lokesh");
+      d.setName(n);
       d.setSalary("20000");
-      
+      d.setAge(20);
       
       StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();  
       Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();  
